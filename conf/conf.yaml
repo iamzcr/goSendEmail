@@ -1,0 +1,6 @@
+email:
+  username: zcrzsj@163.com
+  password: RVVFBWSPKHBZDJHF
+  host: smtp.163.com
+  port: 465
+  ssl: true
