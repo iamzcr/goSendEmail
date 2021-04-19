@@ -49,7 +49,7 @@ func LoadEmailConfig(dir, fileName, fileType string) (err error) {
 	viper.SetConfigName(fileName)
 	viper.SetConfigType(fileType)
 	err = viper.ReadInConfig()
-	if err != nil { // Handle errors reading the config file
+	if err != nil {
 		panic(fmt.Errorf("config error: %s \n", err))
 	}
 	conf.Username = viper.GetString("email.username")
@@ -66,9 +66,7 @@ func StartEmail() {
 			username: conf.Username,
 			password: conf.Password,
 			host:     conf.Host,
-
-			ssl: conf.Ssl,
-
+			ssl:      conf.Ssl,
 			port: func() int {
 				if conf.Port < 1 {
 					return 25
